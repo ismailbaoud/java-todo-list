@@ -3,7 +3,7 @@ package com.example.java.todolist;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TodoList {
+public class Todolist {
     private List<Task> tasks = new ArrayList<>();
 
     public void addTask(String title,String description) {
@@ -25,10 +25,11 @@ public class TodoList {
 
 
     public void updateTask(int id , String newTitle, String newDescription) {
+        
         for(Task task : tasks) {
             if(task.getId() == id) {
                 task.setTitle(newTitle);
-                task.setDescription(newDecription);
+                task.setDescription(newDescription);
                 System.out.println("✅ Task updated: " + task);
                 return;
             }
@@ -50,7 +51,7 @@ public class TodoList {
         for (Task task : tasks) {
             if(task.getId() == id) {
                 task.markCompleted();
-                Systm.out.println("✅ Task marked as completed: " + task);
+                System.out.println("✅ Task marked as completed: " + task);
                 return;
             }
         }

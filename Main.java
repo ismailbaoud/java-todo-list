@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main = (string[] args) {
+    public static void main  (String[] args) {
         Scanner scanner = new Scanner(System.in);
-        TodoList todolist = new Todolist();
+        Todolist todolist = new Todolist();
         int choice;
 
-
+                                            
         do {
             System.out.println("\nTodo List Menu:");
             System.out.println("1. Add Task");
@@ -19,15 +19,15 @@ public class Main {
             System.out.println("5. Mark Task Completed");
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
-            choice = Scanner.nxtInt();
-            Scanner.nextLine();
+            choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
-                    System.out.print('Enter task title: ');
-                    String title = Scanner.nextLine();
+                    System.out.print("Enter task title: ");
+                    String title = scanner.nextLine();
                     System.out.print("Enter task description: ");
-                    String description = Scanner.nextLine();
+                    String description = scanner.nextLine();
                     todolist.addTask(title, description);
                     break;
                 case 2:
@@ -57,9 +57,11 @@ public class Main {
                     System.out.println("Exiting the Todo List application. Goodbye!");
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");    
+                    System.out.println("Invalid choice. Please try again.");  
+                  
             }
 
-        }
+        }while (choice != 6);
     }
+
 }
